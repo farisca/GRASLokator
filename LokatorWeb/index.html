@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>GRAS Lokator</title>
+    <meta charset="utf-8">
+    <meta name="author" content="Cakaric, Ibrahimovic, Kahrovic, Jasarevic, Rozajac">
+    <meta name="description" content="Web stranica za GRAS Lokator." />
+
+    <link rel="stylesheet" type="text/css" href="css/main.css">
+
+    <script src="https://maps.googleapis.com/maps/api/js"></script>
+</head>
+
+<body>
+
+    <div id="lijevi">
+        <img class="logo" src="img/logo_light.png" />
+        <form method="get">
+            Tip vozila:
+            <br>
+            <select name="tipVozila">
+                <option value="1">Tramvaj</option>
+                <option value="2">Trolejbus</option>
+                <option value="3">Autobus</option>
+                <option value="4">Minibus</option>
+            </select>
+            <br>Linija:
+            <br>
+            <select name="linija"></select>
+        </form>
+    </div>
+
+    <div id="desni">
+        <div id="map-canvas"></div>
+    </div>
+    <br>
+
+    <script src="js/index.js"></script>
+</body>
+
+</html>

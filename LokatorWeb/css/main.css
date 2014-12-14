@@ -1,0 +1,101 @@
+@font-face {
+    font-family: 'raleway-regular';
+    src: url('../fonts/raleway-regular.eot');
+    src: url('../fonts/raleway-regular.eot?#iefix') format('embedded-opentype'), url('../fonts/raleway-regular.woff') format('woff'), url('../fonts/raleway-regular.ttf') format('truetype'), url('../fonts/raleway-regular.svg#raleway-regular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'raleway-semibold';
+    src: url('../fonts/raleway-semibold.eot');
+    src: url('../fonts/raleway-semibold.eot?#iefix') format('embedded-opentype'), url('../fonts/raleway-semibold.woff') format('woff'), url('../fonts/raleway-semibold.ttf') format('truetype'), url('../fonts/raleway-semibold.svg#raleway-semibold') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'raleway-bold';
+    src: url('../fonts/raleway-bold.eot');
+    src: url('../fonts/raleway-bold.eot?#iefix') format('embedded-opentype'), url('../fonts/raleway-bold.woff') format('woff'), url('../fonts/raleway-bold.ttf') format('truetype'), url('../fonts/raleway-bold.svg#raleway-bold') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+/*  General CSS*/
+
+body {
+    background: #fff;
+    margin: 0;
+}
+
+
+
+footer {
+    padding: 35px 0;
+    overflow: hidden;
+}
+footer .footer_logo {
+    float: left;
+}
+footer .rights p {
+    float: left;
+    color: #838181;
+    font-family: "raleway-regular";
+    font-size: 13px;
+    margin: 5px 0 0 40px;
+}
+footer .rights p a {
+    color: #777;
+    font-family: "raleway-semibold";
+    font-size: 13px;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+#lijevi {
+    width: 25%;
+    float: left;
+}
+
+#desni {
+    width: 75%;
+    float: right;
+}
+
+form {
+    padding-top: 40px;
+    font-family: "raleway-regular";
+    font-size: 30px;
+    color: #4682B4;
+    width: 100%;
+    padding-left: 10%;
+    
+}
+select {
+    border: 0;
+    overflow: hidden;
+    background: url(new_arrow.png) no-repeat right #ddd;
+    border-radius: 0;
+    background-color: #4682B4;
+    font-family: "raleway-regular";
+    font-size: 20px;
+    color: white;
+    padding: 10px;
+    min-width: 200px;
+    margin-bottom: 15px;
+    margin-top: 5px;
+}
+#map-canvas {
+    width: 80%;
+    height: 450px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 50px;
+}
+img.logo {
+    width: 100px;
+    margin-top: 100px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 100px;
+    padding-right: 20px;
+    background-color: #4682B4;
+}
