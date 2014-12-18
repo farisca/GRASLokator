@@ -7,7 +7,11 @@ document.getElementsByName("tipVozila")[0].addEventListener("change", function()
     var ajax = new XMLHttpRequest();
     ajax.onreadystatechange = function() { // Anonimna funkcija
         if (ajax.readyState == 4 && ajax.status == 200) {
-            var obj = JSON.parse(ajax.responseText);
+			var result = ajax.responseText;
+			result = result.replace("<!-- Hosting24 Analytics Code -->", "");
+			result = result.replace("<script type=\"text/javascript\" src=\"http://stats.hosting24.com/count.php\"></script>", "");
+			result = result.replace("<!-- End Of Analytics Code -->", "");
+            var obj = JSON.parse(result);
             for (i = 0; i <= obj.linije.length - 1; i++) {
                 document.getElementsByName("linija")[0].innerHTML += '<option value="' + obj.linije[i].idLinije + '">' + obj.linije[i].smjer + '</option>';
             }
@@ -16,7 +20,7 @@ document.getElementsByName("tipVozila")[0].addEventListener("change", function()
         if (ajax.readyState == 4 && ajax.status == 404)
             document.getElementById("polje").innerHTML = "Greska: nepoznat URL";
     }
-    ajax.open("GET", "http://178.77.1.194/Linije.php?tipVozila=" + (document.getElementsByName("tipVozila")[0].selectedIndex + 1), true);
+    ajax.open("GET", "http://farisc.comlu.com/Linije.php?tipVozila=" + (document.getElementsByName("tipVozila")[0].selectedIndex + 1), true);
     ajax.send();
 });
 
@@ -28,7 +32,11 @@ function prikaziLiniju() {
     ajax.onreadystatechange = function() { // Anonimna funkcija
         if (ajax.readyState == 4 && ajax.status == 200) {
             if (linija != null) linija.setMap(null);
-            var obj = JSON.parse(ajax.responseText);
+            var result = ajax.responseText;
+			result = result.replace("<!-- Hosting24 Analytics Code -->", "");
+			result = result.replace("<script type=\"text/javascript\" src=\"http://stats.hosting24.com/count.php\"></script>", "");
+			result = result.replace("<!-- End Of Analytics Code -->", "");
+            var obj = JSON.parse(result);
             var koordinateStanica = [];
 
             for (i = 0; i <= obj.stanice.length - 1; i++) {
@@ -48,7 +56,7 @@ function prikaziLiniju() {
             document.getElementById("polje").innerHTML = "Greska: nepoznat URL";
 
     }
-    ajax.open("GET", "http://178.77.1.194/Stanice.php?idLinije=" + idLinije, true);
+    ajax.open("GET", "http://farisc.comlu.com/Stanice.php?idLinije=" + idLinije, true);
     ajax.send();
 }
 
@@ -69,7 +77,11 @@ function prikaziAktivnaVozila() {
         if (ajax.readyState == 4 && ajax.status == 200) {
             for (var i = 0; i < markeri.length; i++)
                 markeri[i].setMap(null);
-            var obj = JSON.parse(ajax.responseText);
+            var result = ajax.responseText;
+			result = result.replace("<!-- Hosting24 Analytics Code -->", "");
+			result = result.replace("<script type=\"text/javascript\" src=\"http://stats.hosting24.com/count.php\"></script>", "");
+			result = result.replace("<!-- End Of Analytics Code -->", "");
+            var obj = JSON.parse(result);
             for (i = 0; i <= obj.voznje.length - 1; i++) {
                 markeri.push(new google.maps.Marker({
                     position: new google.maps.LatLng(obj.voznje[i].lat, obj.voznje[i].lon),
@@ -80,7 +92,7 @@ function prikaziAktivnaVozila() {
         if (ajax.readyState == 4 && ajax.status == 404)
             document.getElementById("polje").innerHTML = "Greska: nepoznat URL";
     }
-    ajax.open("GET", "http://178.77.1.194/Voznje.php?idLinije=" + (document.getElementsByName("linija")[0].value), true);
+    ajax.open("GET", "http://farisc.comlu.com/Voznje.php?idLinije=" + (document.getElementsByName("linija")[0].value), true);
     ajax.send();
 }
 
