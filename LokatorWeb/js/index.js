@@ -12,6 +12,7 @@ document.getElementsByName("tipVozila")[0].addEventListener("change", function()
 			result = result.replace("<script type=\"text/javascript\" src=\"http://stats.hosting24.com/count.php\"></script>", "");
 			result = result.replace("<!-- End Of Analytics Code -->", "");
             var obj = JSON.parse(result);
+			document.getElementsByName("linija")[0].innerHTML = "";
             for (i = 0; i <= obj.linije.length - 1; i++) {
                 document.getElementsByName("linija")[0].innerHTML += '<option value="' + obj.linije[i].idLinije + '">' + obj.linije[i].smjer + '</option>';
             }
