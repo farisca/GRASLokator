@@ -65,10 +65,17 @@ function zoomirajIzmedjuDvijeTacke(prva, druga) {
     map.setCenter(new google.maps.LatLng(
         ((prva.lat() + druga.lat()) / 10.0), ((prva.lng() + druga.lng()) / 10.0)
     ));
-    map.fitBounds(new google.maps.LatLngBounds(
-        new google.maps.LatLng(prva.lat(), prva.lng()),
-        new google.maps.LatLng(druga.lat(), druga.lng())
-    ));
+	if(druga.lng() < prva.lng()) {
+	map.fitBounds(new google.maps.LatLngBounds(
+			new google.maps.LatLng(druga.lat(), druga.lng()),
+			new google.maps.LatLng(prva.lat(), prva.lng())
+		));
+	} else {
+		map.fitBounds(new google.maps.LatLngBounds(
+			new google.maps.LatLng(prva.lat(), prva.lng()),
+			new google.maps.LatLng(druga.lat(), druga.lng())
+		));
+	}
     prikaziAktivnaVozila();
 }
 
